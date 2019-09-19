@@ -78,7 +78,7 @@ var ExprCases = []Case{
 	},
 	{
 		`[{"key":"bar","key2":"bar2"},{"key":"qux"},{"key":"baz"}]`,
-		`[ { "op": "test", "path": "/{'key':'qux'}/key"},{ "op": "remove", "path": "/{'key':'bar'}"}]`,
+		`[ { "op": "test", "path": "/{'key':'bar'}/key2","value":"bar2"},{ "op": "remove", "path": "/{'key':'bar'}"}]`,
 		`[{"key":"qux"},{"key":"baz"}]`,
 	},
 }
