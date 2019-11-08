@@ -495,7 +495,7 @@ func TestAllCases(t *testing.T) {
 		}
 	}
 
-	for i, c := range Cases {
+	for _, c := range Cases {
 		out, err := applyPatch(c.doc, c.patch)
 
 		if err != nil {
@@ -503,7 +503,7 @@ func TestAllCases(t *testing.T) {
 		}
 
 		if !compareJSON(out, c.result) {
-			t.Errorf("%d: ->Patch did not apply. Expected:\n%s\n\nActual:\n%s\nPatch:%s\n", i,
+			t.Errorf("Patch did not apply. Expected:\n%s\n\nActual:\n%s\nPatch:%s\n",
 				reformatJSON(c.result), reformatJSON(out), reformatJSON(c.patch))
 		}
 	}
